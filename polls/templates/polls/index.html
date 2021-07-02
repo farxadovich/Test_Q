@@ -1,0 +1,10 @@
+{% extends './base.html' %}
+{% block main %}
+{% for fan in fanlar %}
+<div class="list-group">
+    <a href="{% url 'questions' fan.id %}" class="list-group-item ">
+        {{ fan.nomi }}
+    </a>
+</div>
+{% endfor %}
+{% endblock %}

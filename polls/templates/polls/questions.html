@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="{% url 'check' %}">
+
+    {% for savol in all_savollar %}
+    {{ savol.text }} <br>
+<fieldset id="{{ savol.id }}">
+        {% for javob in savol.choice_set.all %}
+        <input type="radio" id="savol" name="{{ savol.id }}" value="{{ javob.id }}">
+        <label for="savol">{{javob.text}} </label> <br>
+        {% endfor %}
+</fieldset>
+    {% endfor %}
+    <input type="submit" value="OK">
+</form>
+
+</body>
+</html>
